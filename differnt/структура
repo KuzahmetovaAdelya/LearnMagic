@@ -13,6 +13,6 @@ users:
 - login (У)
 - password (sha256)
 - email 
-- status (user, admin)
+- status (user, admin) - admin/bestadmin
 - role (дошкольник, школьник)
 - avatar (id аватара)
