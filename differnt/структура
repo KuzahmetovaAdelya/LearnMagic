@@ -16,3 +16,10 @@ users:
 - status (user, admin) - admin/bestadmin
 - role (дошкольник, школьник)
 - avatar (id аватара)
+
+progress:?
+- game_id
+- id (from users)
+- progress (0/1)
+; if 0, game disable
+; if 1, game anable
