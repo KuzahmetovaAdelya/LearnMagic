@@ -22,4 +22,8 @@ progress:?
 - id (from users)
 - progress (0/1)
 ; if 0, game disable
-; if 1, game anable
+; if 1, game anable - default
+
+games:
+- game_id
+- name
