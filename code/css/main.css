@@ -44,8 +44,31 @@ footer {
     box-shadow: 4px 4px 0px #4C4A4B;
 }
 
+.auth-but-vers {
+    max-width: 15%;
+    min-width: 15%;
+    height: 40%;
+}
+
 .foot-but-img {
     width: 30%;
+}
+
+.auth-img-vers {
+    width: 15%;
+}
+
+@media (max-width: 500px) {
+    .auth-img-vers {
+        width: 1px;
+        min-width: 1px;
+    }
+
+    .auth-but-vers {
+        max-width: 20%;
+        min-width: 20%;
+        height: 30%;
+    }
 }
 
 .foot-but-text {

@@ -79,7 +79,10 @@
     width: 40%;
     padding-top: 1vh;
     padding-bottom: 1vh;
-    
+}
+
+.auth-reg-but-vers {
+    margin-left: 30%;
 }
 
 .reg-checkbox {
