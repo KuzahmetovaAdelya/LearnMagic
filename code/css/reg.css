@@ -1,0 +1,92 @@
+.title {
+    color: #fff;
+    font-size: calc(0.5em + 2vw);
+    font-weight: 400;
+}
+
+.reg-form {
+    width: 40vw;
+    max-height: fit-content;
+    background-color: #C0C0C0;
+    box-shadow: 5px 5px 0px #2B2B2B;
+    margin-left: 30vw;
+    margin-top: 5vh;
+}
+
+.reg-blue-line {
+    background-color: #0200CB;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 1vw;
+    padding-left: 1vw;
+}
+
+.close-box {
+    background-color: #C0C0C0;
+    box-shadow: inset 1px 1px 0px #fff;
+    box-shadow: 1px 1px 0px #2B2B2B;
+    padding: 0.4vw;
+    align-items: center;
+    display: flex;
+}
+
+.close {
+    width: 2vw;
+    height: 2vw;
+    margin: 0;
+    padding: 0;
+}
+
+.reg-form-block {
+    padding: 3vw 4vw;    
+}
+
+.reg-input {
+    background-color: #C0C0C0;
+    border: none;
+    border-bottom: 0.2vh solid #000;
+    background-clip: padding-box;
+    outline: 0;
+    margin-right: 4vw;
+    max-width: 20vw;
+    width: 100%;
+    font-size: calc(00.5em + 1vw);
+}
+
+.reg-input-text {
+    font-size: calc(0.5em + 1vw);
+    color: #000;
+    line-height: 1;
+}
+
+.reg-input-line {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2vh;
+}
+
+.rectangle {
+    border: 1px solid #000;
+    width: 5vw;
+    height: 5vw;
+}
+
+.reg-but {
+    font-size: calc(00.5em + 1vw);
+    background-color: #C0C0C0;
+    width: 40%;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    
+}
+
+.reg-checkbox {
+   margin-right: 1vw;
+   cursor: pointer;
+}
+
+.reg-checkbox-label {
+    font-size: calc(0.3em + 1vw);
+}

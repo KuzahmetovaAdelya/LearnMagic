@@ -1,0 +1,29 @@
+.title-learn {
+    width: 60vw;
+    margin-top: 20vh;
+    margin-left: 20vw;
+    transform: rotate(1deg);
+}
+
+.start-but {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 1vw 2vw;
+    max-width: 15vw;
+    min-width: 13vw;
+    box-shadow: inset -8px -8px 0px #DFDCDC;
+    border: solid #000 3px;
+    margin-left: 40%;
+}
+
+.start-but-img {
+    width: 10vw;
+    min-width: 5vw;
+}
+
+.start-but-text {
+    font-size: calc(0.5em + 3vw);
+    font-weight: 400;
+}
