@@ -5,8 +5,16 @@
     text-decoration: none;
 }
 
+u {
+    text-decoration: underline;
+}
+
 a {
     color: #000;
+}
+
+p {
+    cursor: default;
 }
 
 .body {
@@ -42,6 +50,12 @@ footer {
     padding: 0.5vw 1vw;
     max-width: 7%;
     box-shadow: 4px 4px 0px #4C4A4B;
+}
+
+.foot-but:hover {
+    background-color: #e2e0e0;
+    transform: scale(1.05);
+    transition: all 0.2s ease;
 }
 
 .auth-but-vers {

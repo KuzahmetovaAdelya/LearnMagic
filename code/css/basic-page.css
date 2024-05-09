@@ -1,0 +1,151 @@
+.icons-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    float: left;
+    gap: 3vh;
+    padding-left: 2vw;
+}
+
+.icon-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon-link:hover .icons-name{
+    color: #002652;
+    transition: all 0.2s ease-in-out;
+}
+
+
+.icon {
+    width: 6vw;
+}
+
+.icons-name {
+    font-size: calc(0.3em + 1vw);
+    color: #fff;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+/* For all-games.html */
+
+.window {
+    width: 60%;
+    background-color: #CBC8C1;
+    margin-left: 20%;
+    padding: 1%;
+}
+
+.window-blue-line {
+    background: linear-gradient(to right, #162F72, #AAD5F7);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.1vw 0.3vw;   
+    margin-bottom: 0.5vh;
+}
+
+.window-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5vw;
+}
+
+.window-logo-img {
+    width: 2vw;
+}
+
+.window-logo-text {
+    font-size: calc(0.3em + 0.75vw);
+    color: #fff;
+    font-weight: 900;
+}
+
+.window-action-but-line {
+    display: flex;
+    align-items: center;
+    gap: 0.5vw;
+}
+
+.window-action-but-img {
+    width: 1vw;
+}
+
+.window-action-but-img-bg {
+    background-color: #D7D1CB;
+    display: flex;
+    align-items: center;
+    width: 0.9vw;
+    height: 0.9vw;
+    padding: 0.2vw;
+    box-shadow: 0.1vw 0.1vw 0px #666665;
+}
+
+.linked:hover {
+    background-color: #cac4bd;
+}
+
+.window-nav-lines {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5vh;
+}
+
+.window-nav {
+    display: flex;
+    align-items: center;
+    gap: 0.5vw;
+    background-color: #D4D1C8;
+    box-shadow: -0.2vw -0.1vw 0px #fff;
+}
+
+.window-nav-text {
+    font-size: calc(0.3em + 0.75vw);
+}
+
+.window-nav-back {
+    display: flex;
+    align-items: center;
+    gap: 0.1vw;
+}
+
+.window-nav-back-img {
+    width: 1.5vw;
+}
+
+.rotated {
+    transform: rotate(180deg);
+}
+
+.window-nav-back-text {
+    font-size: calc(0.3em + 0.75vw);
+    color: #84807D;
+    font-weight: 200;
+}
+
+.window-body {
+    background-color: #fff;
+    margin-top: 3%;
+    padding-top: 1%;
+    padding-left: 2%;
+    height: 40vh;
+    box-shadow: inset 0.1vw 0.1vh 0px #6F6B62;
+}
+
+.window-files-line {
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+}
+
+.window-body-file-link:hover {
+    transform: scale(1.05);
+    transition: all 0.2s ease-in-out;
+}
+
+.window-body-file {
+    width: 5vw;
+}
