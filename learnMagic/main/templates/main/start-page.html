@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'main/css/main.css'%}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnMagic</title>
+    <link rel="stylesheet" href="{% static 'main/css/start-page.css'%}">
+</head>
+<body>
+    <div class="body">
+        <img src="{% static 'main/img/photo/name.png' %}" alt="" class="title-learn">
+        <a href="{% url 'auth' %}" class="start-but">
+            <img src="{% static 'main/img/icon/logo.png' %}" alt="" class="start-but-img">
+            <p class="start-but-text">START</p>
+        </a>
+    </div>
+</body>
+</html>

@@ -18,7 +18,7 @@ p {
 }
 
 .body {
-    background-image: url(/./img/photo/фон.png);
+    background-image: url(./../img/photo/фон.png);
     background-repeat: no-repeat;
     background-size:cover;
     width: 100vw;

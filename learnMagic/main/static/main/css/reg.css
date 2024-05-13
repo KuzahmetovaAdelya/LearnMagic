@@ -67,11 +67,7 @@
     margin-bottom: 2vh;
 }
 
-.rectangle {
-    border: 1px solid #000;
-    width: 5vw;
-    height: 5vw;
-}
+
 
 .reg-but {
     font-size: calc(00.5em + 1vw);

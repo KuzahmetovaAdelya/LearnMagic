@@ -1,11 +1,12 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="{% static 'main/css/main.css'%}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LearnMagic</title>
-    <link rel="stylesheet" href="./css/reg.css">
+    <link rel="stylesheet" href="{% static 'main/css/reg.css'%}">
 </head>
 <body>
     <div class="body">
@@ -16,40 +17,46 @@
                 <div class="reg-blue-line">
                     <h1 class="title">РЕГИСТРАЦИЯ</h1>
                     <div class="close-box">
-                        <img src="./../img/icon/krest.svg" alt="" class="close">
+                        <img src="{% static 'main/img/icon/krest.svg' %}" alt="" class="close">
                     </div>
                 </div>
-                <form action="" class="reg-form-block">
+                <form action="{% url 'reg' %}" class="reg-form-block" method="post">
+                    {% csrf_token %}
                     <div class="reg-input-line">
                         <p class="reg-input-text">Имя</p>
-                        <input type="text" class="reg-input" name="">
+                        <input type="text" class="reg-input" name="name">
                     </div>
                     <div class="reg-input-line">
                         <p class="reg-input-text">Пароль</p>
-                        <input type="password" class="reg-input" name="">
+                        <input type="password" class="reg-input" name="password">
                     </div>
                     <div class="reg-input-line">
                         <p class="reg-input-text">Повтор пароля</p>
-                        <input type="password" class="reg-input" name="">
+                        <input type="password" class="reg-input" name="passwordAgain">
                     </div>
                     <div class="reg-input-line">
-                        <p class="reg-input-text">Выбор аватара</p>
-                        <div class="rectangle"></div>
-                        <div class="rectangle"></div>
-                        <div class="rectangle"></div>
+                        <p class="reg-input-text">Выберите роль</p>
+                        <div>
+                            <input type="radio" name="role" id="0" class="reg-radio" value="0">
+                            <label for="0" class="reg-checkbox-label">Дошкольник</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="role" id="1" class="reg-radio" value="1">
+                            <label for="1" class="reg-checkbox-label">Школьник</label>
+                        </div>
                     </div>
                     <div class="reg-input-line">
                         <input type="checkbox" name="" id="reg-checkbox" class="reg-checkbox">
                         <label for="reg-checkbox" class="reg-checkbox-label">Согласие на обработку персональных данных</label>
-                        <button class="reg-but">ОК</button>
+                        <input type="submit" class="reg-but" value="OK">
                     </div>
                 </form>
             </div>
         </div>
 
         <footer>
-            <a href="./auth.html" class="foot-but">
-                <img src="./../img/icon/logo.png" alt="" class="foot-but-img">
+            <a href="{% url 'auth' %}" class="foot-but">
+                <img src="{% static 'main/img/icon/logo.png' %}" alt="" class="foot-but-img">
                 <p class="foot-but-text">ВХОД</p>
             </a>
 

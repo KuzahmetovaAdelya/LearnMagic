@@ -1,11 +1,12 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="{% static 'main/css/main.css'%}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LearnMagic</title>
-    <link rel="stylesheet" href="./css/basic-page.css">
+    <link rel="stylesheet" href="{% static 'main/css/basic-page.css'%}">
 </head>
 <body>
     <div class="body">
@@ -14,12 +15,12 @@
 
             <div class="icons-block">
                 <a href="#" class="icon-link">
-                    <img src="./../img/icon/comp.svg" alt="" class="icon">
+                    <img src="{% static 'main/img/icon/comp.svg' %}" alt="" class="icon">
                     <p class="icons-name">Мой компьютер</p>
                 </a>
 
-                <a href="#" class="icon-link">
-                    <img src="./../img/icon/files.svg" alt="" class="icon">
+                <a href="{% url 'games' %}" class="icon-link">
+                    <img src="{% static 'main/img/icon/files.svg' %}" alt="" class="icon">
                     <p class="icons-name">Игры</p>
                 </a>
             </div>
@@ -27,7 +28,7 @@
 
         <footer>
             <a href="#" class="foot-but">
-                <img src="./../img/icon/logo.png" alt="" class="foot-but-img">
+                <img src="{% static 'main/img/icon/logo.png' %}" alt="" class="foot-but-img">
                 <p class="foot-but-text">АККАУНТ</p>
             </a>
 
