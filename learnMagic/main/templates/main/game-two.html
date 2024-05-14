@@ -1,0 +1,151 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'main/css/main.css'%}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnMagic</title>
+    <link rel="stylesheet" href="{% static 'main/css/basic-page.css'%}">
+    <link rel="stylesheet" href="{% static 'main/css/game-one.css'%}">
+</head>
+<body>
+    <div class="body">
+        <div class="content">
+            <div class="for-first-margin"><br></div>
+
+            <div class="icons-block">
+                <a href="#" class="icon-link">
+                    <img src="{% static 'main/img/icon/comp.svg' %}" alt="" class="icon">
+                    <p class="icons-name">Мой компьютер</p>
+                </a>
+
+                <a href="{% url 'games-child' %}" class="icon-link">
+                    <img src="{% static 'main/img/icon/files.svg' %}" alt="" class="icon">
+                    <p class="icons-name">Игры</p>
+                </a>
+            </div>
+
+            <div class="window">
+                <div class="window-blue-line">
+                    <div class="window-logo">
+                        <img src="{% static 'main/img/icon/littleFile.svg' %}" alt="" class="window-logo-img">
+                        <p class="window-logo-text">Какой цвет?</p>
+                    </div>
+                    <div class="window-action-but-line">
+                        <div class="window-action-but-img-bg"><img src="{% static 'main/img/icon/underline.svg' %}" alt="" class="window-action-but-img"></div>
+                        <div class="window-action-but-img-bg"><img src="{% static 'main/img/icon/rectangle.svg' %}" alt="" class="window-action-but-img"></div>
+                        <a href="" class="window-action-but-img-bg linked"><img src="{% static 'main/img/icon/littleCross.svg' %}" alt="" class="window-action-but-img"></a>
+                    </div>
+                </div>
+
+                <div class="window-nav-lines">
+                    <div class="window-nav">
+                        <p class="window-nav-text"><u>F</u>ile</p>
+                        <p class="window-nav-text"><u>E</u>dit</p>
+                        <p class="window-nav-text"><u>V</u>iew</p>
+                        <p class="window-nav-text"><u>F</u>avorites</p>
+                        <p class="window-nav-text"><u>T</u>ools</p>
+                        <p class="window-nav-text"><u>H</u>elp</p>
+                    </div>
+
+                    <div class="window-nav">
+                        <a class="window-nav-back" href="{% url 'games-child' %}">
+                            <img src="{% static 'main/img/icon/arrow.svg' %}" alt="" class="window-nav-back-img">
+                            <p class="window-nav-back-text">Back</p>
+                        </a>
+                        <img src="{% static 'main/img/icon/arrow.svg' %}" alt="" class="window-nav-back-img rotated">
+                    </div>
+                </div>
+
+                <div class="window-body window-games">
+                    <form action="{% url 'child-game-two' %}" class="game-form-two" method="post">
+                        {% csrf_token %}
+                        <div class="window-body-lines game-lines-two">
+                        
+                            <div class="window-body-first-line">
+                                <input type="text" name="answer-one" placeholder="Какой это цвет?" class="game-input game-inp-two">  
+                                <input type="text" name="answer-two" placeholder="Какой это цвет?" class="game-input game-inp-two"> 
+                                <input type="text" name="answer-three" placeholder="Какой это цвет?" class="game-input game-inp-two"> 
+                                <input type="text" name="answer-four" placeholder="Какой это цвет?" class="game-input game-inp-two">   
+                            </div>
+                            <div class="window-body-first-line">
+                                <img src="{% static 'main/img/icon/green.svg' %}" alt="" class="window-body-img game-two-img">    
+                                <img src="{% static 'main/img/icon/blue.svg' %}" alt="" class="window-body-img game-two-img">    
+                                <img src="{% static 'main/img/icon/yellow.svg' %}" alt="" class="window-body-img game-two-img">    
+                                <img src="{% static 'main/img/icon/red.svg' %}" alt="" class="window-body-img game-two-img">    
+                            </div>
+
+                            <input type="submit" value="OK" class="game-but game-but-two">
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <a href="#" class="foot-but">
+                <img src="{% static 'main/img/icon/logo.png' %}" alt="" class="foot-but-img">
+                <p class="foot-but-text">АККАУНТ</p>
+            </a>
+
+            <div class="foot-time-block">
+                <p class="foot-time">02:18</p>
+            </div>
+        </footer>
+
+        <div id="openModal" class="modal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title">УСПЕХ</h3>
+                        <a href="{% url 'games-child' %}" title="Close" class="close">×</a>
+                    </div>
+                    <div class="modal-body">    
+                        <div class="modal-true">
+                            <img src="{% static 'main/img/icon/true.svg' %}" alt="" class="modal-img">
+                            <p class="modal-text">ОТЛИЧНО!<br>ВСЕ ВЫПОЛНЕНО ВЕРНО</p>
+                        </div>
+                        <a href="{% url 'games-child' %}" class="modal-but">OK</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="openModal" class="modal-two">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title">ОШИБКА</h3>
+                        <a href="{% url 'games-child' %}" title="Close" class="close">×</a>
+                    </div>
+                    <div class="modal-body">    
+                        <div class="modal-true">
+                            <img src="{% static 'main/img/icon/false.svg' %}" alt="" class="modal-img">
+                            <p class="modal-text">НЕПРАВИЛЬНО!<br>ДОПУЩЕНА ОШИБКА!</p>
+                        </div>
+                        <a href="{% url 'games-child' %}" class="modal-but">OK</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            let server = 0
+            server = "{{server|escapejs}}";
+            if (server === "yes") {
+                let elem = document.querySelector('.modal')
+                elem.style.pointerEvents = "auto";
+                elem.style.opacity = 1;
+                console.log(server)
+            } else if (server === "no") {
+                let elem = document.querySelector('.modal-two')
+                elem.style.pointerEvents = "auto";
+                elem.style.opacity = 1;
+                console.log(server)
+            }
+        </script>
+    </div>
+</body>
+</html>

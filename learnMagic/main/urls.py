@@ -5,7 +5,10 @@ urlpatterns = [
     path('', views.index, name='startPage'),
     path('auth', views.auth, name='auth'),
     path('reg', views.reg, name='reg'),
-    path('desktop', views.desktop, name='desktop'),
-    path('games', views.gamesPage, name='games'),
-
+    path('desktop-child', views.desktopChild, name='desktop-child'),
+    path('desktop-pup', views.desktopPup, name='desktop-pup'),
+    path('games-child', views.gamesPageChild, name='games-child'),
+    path('games-pup', views.gamesPagePup, name='games-pup'),
+    path('child-game-one', views.childGameOne, name='child-game-one'),
+    path('child-game-two', views.childGameTwo, name='child-game-two'),
 ]

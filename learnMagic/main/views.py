@@ -16,13 +16,17 @@ def auth(request):
         password = request.POST.get('password', 'None')
 
         db_user = Persons.objects.get(name=name)
-
-        db_password = bcrypt.checkpw(password.encode(), db_user.password)
-        return HttpResponse(f'<p>{db_password}, {password}</p>')
-        # if db_pass == password:
-        #     redirect("desktop")
-        # else:
-        #     redirect("auth")
+        print(db_user.password)
+        acception = bcrypt.checkpw(password.encode(), db_user.password.encode())
+        if acception:
+            if db_user.role == "0":
+                return redirect("desktop-child")
+            elif db_user.role == "1":
+                return redirect("desktop-pup")
+            else:
+                return HttpResponse(db_user.role)
+        else:
+            return redirect("auth")
     else:
         return render(request, 'main/auth.html')
 
@@ -40,7 +44,7 @@ def reg(request):
 
             user = Persons()
             user.name = name
-            user.password = password
+            user.password = password.decode()
             user.role = role
             user.save()
             return redirect("desktop")
@@ -48,9 +52,51 @@ def reg(request):
         return render(request, 'main/reg.html')  
 
 
-def desktop(request):
+def desktopChild(request):
     return render(request, 'main/basic-page.html')
 
 
-def gamesPage(request):
+def desktopPup(request):
+    return render(request, 'main/basic-page-pup.html')
+
+
+def gamesPageChild(request):
     return render(request, 'main/all-games.html')
+
+
+def gamesPagePup(request):
+    return render(request, 'main/all-games-pup.html')
+
+
+def childGameOne(request):
+    if request.method == "POST":
+        u_answer = request.POST.get("u_answer", "0")
+        r_answer = "3"
+        if u_answer == r_answer:
+            server = {"server": "yes"}
+            return render(request, 'main/game-one.html', server)
+        else:
+            server = {"server": "no"}
+            return render(request, 'main/game-one.html', server)
+    else:
+        return render(request, 'main/game-one.html')
+
+
+def childGameTwo(request):
+    if request.method == "POST":
+        u_answer_one = request.POST.get("answer-one", "0").lower()
+        u_answer_two = request.POST.get("answer-two", "0").lower()
+        u_answer_three = request.POST.get("answer-three", "0").lower()
+        u_answer_four = request.POST.get("answer-four", "0").lower()
+        r_answer_one = "зеленый"
+        r_answer_two = "синий"
+        r_answer_three = "желтый"
+        r_answer_four = "красный"
+        if u_answer_one == r_answer_one and u_answer_two == r_answer_two and u_answer_three == r_answer_three and u_answer_four == r_answer_four:
+            server = {"server": "yes"}
+            return render(request, 'main/game-two.html', server)
+        else:
+            server = {"server": "no"}
+            return render(request, 'main/game-two.html', server)
+    else:
+        return render(request, 'main/game-two.html')

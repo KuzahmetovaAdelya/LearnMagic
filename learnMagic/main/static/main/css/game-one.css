@@ -1,0 +1,74 @@
+.window-games {
+    background-image: url(./../img/photo/window-fon.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 45vh;
+}
+
+.window-body-lines {
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+}
+
+.window-body-first-line {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.window-body-img {
+    width: 10%;
+}
+
+.game-but {
+    font-size: calc(00.5em + 0.5vw);
+    background-color: #C0C0C0;
+    width: 7%;
+    padding-top: 0.8vh;
+    padding-bottom: 0.8vh;
+}
+
+.game-but:hover {
+    cursor: pointer;
+}
+
+.game-input {
+    height: calc(000.5em + 2.5vh);
+    border-bottom: solid #BFBFBF 3px;
+    border-right: solid #BFBFBF 3px;
+    border-top: solid #7B7B7B 3px;
+    border-left: solid #7B7B7B 3px;
+    font-size: calc(00.5em + 0.5vw);
+    color: #000;
+    font-family: "Signika", sans-serif;
+}
+
+.game-input:focus-visible {
+    outline: none;
+}
+
+.game-form {
+    display: flex;
+    align-items: center;
+    gap: 1%;
+    margin-left: 35%;
+}
+
+/* Second game */
+.game-inp-two {
+    max-width: 15%;
+}
+
+.game-two-img {
+    width: 15%;
+}
+
+.game-but-two {
+    font-size: calc(00.5em + 0.8vw);
+    width: 10%;
+    margin-left: 45%;
+}
+
+.game-form-two {
+    margin-top: 2vh;
+}
