@@ -34,7 +34,7 @@
                     <div class="window-action-but-line">
                         <div class="window-action-but-img-bg"><img src="{% static 'main/img/icon/underline.svg' %}" alt="" class="window-action-but-img"></div>
                         <div class="window-action-but-img-bg"><img src="{% static 'main/img/icon/rectangle.svg' %}" alt="" class="window-action-but-img"></div>
-                        <a href="" class="window-action-but-img-bg linked"><img src="{% static 'main/img/icon/littleCross.svg' %}" alt="" class="window-action-but-img"></a>
+                        <a href="{% url 'desktop-child' %}" class="window-action-but-img-bg linked"><img src="{% static 'main/img/icon/littleCross.svg' %}" alt="" class="window-action-but-img"></a>
                     </div>
                 </div>
 
@@ -49,10 +49,10 @@
                     </div>
 
                     <div class="window-nav">
-                        <div class="window-nav-back">
+                        <a class="window-nav-back" href="{% url 'desktop-child' %}">
                             <img src="{% static 'main/img/icon/arrow.svg' %}" alt="" class="window-nav-back-img">
                             <p class="window-nav-back-text">Back</p>
-                        </div>
+                        </a>
                         <img src="{% static 'main/img/icon/arrow.svg' %}" alt="" class="window-nav-back-img rotated">
                     </div>
                 </div>

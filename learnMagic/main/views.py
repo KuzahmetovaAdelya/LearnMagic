@@ -47,7 +47,10 @@ def reg(request):
             user.password = password.decode()
             user.role = role
             user.save()
-            return redirect("desktop")
+            if role == "1":
+                return redirect("desktop-pup")
+            else:
+                return redirect("desktop-child")
     else:
         return render(request, 'main/reg.html')  
 
