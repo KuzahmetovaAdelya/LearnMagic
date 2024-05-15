@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LearnMagic</title>
     <link rel="stylesheet" href="{% static 'main/css/basic-page.css'%}">
-    <link rel="stylesheet" href="{% static 'main/css/game-one.css'%}">
+    <link rel="stylesheet" href="{% static 'main/css/game-three.css'%}">
 </head>
 <body>
     <div class="body">
@@ -20,7 +20,7 @@
                     <p class="icons-name">Мой компьютер</p>
                 </a>
 
-                <a href="{% url 'games-child' %}" class="icon-link">
+                <a href="{% url 'games-pup' %}" class="icon-link">
                     <img src="{% static 'main/img/icon/files.svg' %}" alt="" class="icon">
                     <p class="icons-name">Игры</p>
                 </a>
@@ -30,12 +30,12 @@
                 <div class="window-blue-line">
                     <div class="window-logo">
                         <img src="{% static 'main/img/icon/littleFile.svg' %}" alt="" class="window-logo-img">
-                        <p class="window-logo-text">Сосчитать иконки</p>
+                        <p class="window-logo-text">Как поступить?</p>
                     </div>
                     <div class="window-action-but-line">
                         <div class="window-action-but-img-bg"><img src="{% static 'main/img/icon/underline.svg' %}" alt="" class="window-action-but-img"></div>
                         <div class="window-action-but-img-bg"><img src="{% static 'main/img/icon/rectangle.svg' %}" alt="" class="window-action-but-img"></div>
-                        <a href="{% url 'desktop-child' %}" class="window-action-but-img-bg linked"><img src="{% static 'main/img/icon/littleCross.svg' %}" alt="" class="window-action-but-img"></a>
+                        <a href="{% url 'desktop-pup' %}" class="window-action-but-img-bg linked"><img src="{% static 'main/img/icon/littleCross.svg' %}" alt="" class="window-action-but-img"></a>
                     </div>
                 </div>
 
@@ -50,7 +50,7 @@
                     </div>
 
                     <div class="window-nav">
-                        <a class="window-nav-back" href="{% url 'games-child' %}">
+                        <a class="window-nav-back" href="{% url 'games-pup' %}">
                             <img src="{% static 'main/img/icon/arrow.svg' %}" alt="" class="window-nav-back-img">
                             <p class="window-nav-back-text">Back</p>
                         </a>
@@ -59,27 +59,23 @@
                 </div>
 
                 <div class="window-body window-games">
-                    <div class="window-body-lines">
-                        <div class="window-body-first-line">
-                            <img src="{% static 'main/img/icon/book.svg' %}" alt="" class="window-body-img">    
-                            <img src="{% static 'main/img/icon/cube.svg' %}" alt="" class="window-body-img">    
-                            <img src="{% static 'main/img/icon/calculator.svg' %}" alt="" class="window-body-img">    
-                            <img src="{% static 'main/img/icon/book.svg' %}" alt="" class="window-body-img">    
-                        </div>
-                        <div class="window-body-first-line">
-                            <img src="{% static 'main/img/icon/calculator.svg' %}" alt="" class="window-body-img">    
-                            <img src="{% static 'main/img/icon/book.svg' %}" alt="" class="window-body-img">    
-                            <img src="{% static 'main/img/icon/cube.svg' %}" alt="" class="window-body-img">    
-                            <img src="{% static 'main/img/icon/calculator.svg' %}" alt="" class="window-body-img">   
-                            <img src="{% static 'main/img/icon/cube.svg' %}" alt="" class="window-body-img">  
-                        </div>
-
-                        <form action="{% url 'child-game-one' %}" class="game-form" method="post">
-                            {% csrf_token %}
-                            <input type="number" name="u_answer" id="" placeholder="Сколько кубиков?" class="game-input">
-                            <input type="submit" value="OK" class="game-but">
-                        </form>
+                    <div class="window-body-first-line">
+                        <p class="game-three-text">
+                            Семену пришло сообщение в<br>
+                            социальной сети от его друга Петра:<br>
+                            «Привет, Семен! Не выручишь<br>
+                            деньгами до вторника? А то баланс на<br>
+                            телефоне отрицательный, срочно<br>
+                            надо связаться с родителями. Скинь<br>
+                            500 рублей на номер ***». <b>Как<br>
+                            поступить Семену в этой ситуации?</b>
+                        </p>
                     </div>
+                    <form class="window-body-first-line" action="{% url 'pup-game-one' %}" method="post">
+                        {% csrf_token %}
+                        <input type="submit" value="Переслать другу деньги" class="game-but" name="n">
+                        <input type="submit" value="Перезвонить другу и уточнить" class="game-but" name="n">
+                    </form>
                 </div>
             </div>
         </div>
@@ -95,37 +91,51 @@
             </div>
         </footer>
 
-        <div id="openModal" class="modal">
+        <div id="openModal" class="modal-three">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h3 class="modal-title">УСПЕХ</h3>
-                        <a href="{% url 'games-child' %}" title="Close" class="close">×</a>
+                        <a href="{% url 'games-pup' %}" title="Close" class="close">×</a>
                     </div>
                     <div class="modal-body">    
                         <div class="modal-true">
-                            <img src="{% static 'main/img/icon/true.svg' %}" alt="" class="modal-img">
-                            <p class="modal-text">ОТЛИЧНО!<br>ВСЕ ВЫПОЛНЕНО ВЕРНО</p>
+                            <p class="modal-text">
+                                ОТЛИЧНО!<br>
+                                ВСЕ ВЫПОЛНЕНО ВЕРНО<br>
+                                СКОРЕЕ ВСЕГО ЭТО МОШЕННИКИ,<br>
+                                КОТОРЫЕ ВЗЛОМАЛИ АККАУНТ ПЕТРА<br>
+                                В СОЦИАЛЬНОЙ СЕТИ И РАССЫЛАЮТ<br>
+                                СООБЩЕНИЯ ОТ ЕГО ИМЕНИ С ЦЕЛЬЮ<br>
+                                НАЖИВЫ.
+                            </p>
                         </div>
-                        <a href="{% url 'games-child' %}" class="modal-but">OK</a>
+                        <a href="{% url 'games-pup' %}" class="modal-but">OK</a>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div id="openModal" class="modal-two">
+        <div id="openModal" class="modal-four">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h3 class="modal-title">ОШИБКА</h3>
-                        <a href="{% url 'games-child' %}" title="Close" class="close">×</a>
+                        <a href="{% url 'games-pup' %}" title="Close" class="close">×</a>
                     </div>
                     <div class="modal-body">    
                         <div class="modal-true">
-                            <img src="{% static 'main/img/icon/false.svg' %}" alt="" class="modal-img">
-                            <p class="modal-text">НЕПРАВИЛЬНО!<br>ДОПУЩЕНА ОШИБКА!</p>
+                            <p class="modal-text">
+                                НЕПРАВИЛЬНО!<br>
+                                ДОПУЩЕНА ОШИБКА<br>
+                                СКОРЕЕ ВСЕГО ЭТО МОШЕННИКИ,<br>
+                                КОТОРЫЕ ВЗЛОМАЛИ АККАУНТ ПЕТРА<br>
+                                В СОЦИАЛЬНОЙ СЕТИ И РАССЫЛАЮТ<br>
+                                СООБЩЕНИЯ ОТ ЕГО ИМЕНИ С ЦЕЛЬЮ<br>
+                                НАЖИВЫ.
+                            </p>
                         </div>
-                        <a href="{% url 'games-child' %}" class="modal-but">OK</a>
+                        <a href="{% url 'games-pup' %}" class="modal-but">OK</a>
                     </div>
                 </div>
             </div>
@@ -161,17 +171,18 @@
             let server = 0
             server = "{{server|escapejs}}";
             if (server === "yes") {
-                let elem = document.querySelector('.modal')
+                let elem = document.querySelector('.modal-three')
                 elem.style.pointerEvents = "auto";
                 elem.style.opacity = 1;
-                console.log(server)
+                console.log(server, elem)
             } else if (server === "no") {
-                let elem = document.querySelector('.modal-two')
+                let elem = document.querySelector('.modal-four')
                 elem.style.pointerEvents = "auto";
                 elem.style.opacity = 1;
                 console.log(server)
             }
         </script>
+
     </div>
 </body>
 </html>

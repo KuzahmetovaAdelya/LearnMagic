@@ -35,7 +35,7 @@
                     <div class="window-action-but-line">
                         <div class="window-action-but-img-bg"><img src="{% static 'main/img/icon/underline.svg' %}" alt="" class="window-action-but-img"></div>
                         <div class="window-action-but-img-bg"><img src="{% static 'main/img/icon/rectangle.svg' %}" alt="" class="window-action-but-img"></div>
-                        <a href="" class="window-action-but-img-bg linked"><img src="{% static 'main/img/icon/littleCross.svg' %}" alt="" class="window-action-but-img"></a>
+                        <a href="{% url 'desktop-child' %}" class="window-action-but-img-bg linked"><img src="{% static 'main/img/icon/littleCross.svg' %}" alt="" class="window-action-but-img"></a>
                     </div>
                 </div>
 
@@ -85,7 +85,7 @@
         </div>
 
         <footer>
-            <a href="#" class="foot-but">
+            <a href="#openModal5" class="foot-but">
                 <img src="{% static 'main/img/icon/logo.png' %}" alt="" class="foot-but-img">
                 <p class="foot-but-text">АККАУНТ</p>
             </a>
@@ -126,6 +126,32 @@
                             <p class="modal-text">НЕПРАВИЛЬНО!<br>ДОПУЩЕНА ОШИБКА!</p>
                         </div>
                         <a href="{% url 'games-child' %}" class="modal-but">OK</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="openModal5" class="modal-five">
+            <div class="modal-dialog-five">
+                <div class="modal-content">
+                    <div class="modal-header modal-header-five">
+                        <h3 class="modal-title modal-title-five">LEARN MAGIC</h3>
+                        <a href="#" title="Close" class="close">×</a>
+                    </div>
+                    <div class="modal-body">    
+                        <div class="modal-body-five">
+                            <div class="modal-five-line">
+                                <img src="{% static 'main/img/icon/user.svg' %}" alt="" class="modal-five-img">
+                                <p class="modal-five-text">{{name|escapejs}}</p>
+                            </div>
+                            <div class="modal-five-line">
+                                <p class="modal-five-text marg">{{role|escapejs}}</p>
+                            </div>
+                            <form class="modal-five-line" action="{% url 'exit' %}" method="post">
+                                {% csrf_token %}
+                                <input type="submit" value="Выйти" class="modal-five-but marg">
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>

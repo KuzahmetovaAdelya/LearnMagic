@@ -13,6 +13,10 @@ a {
     color: #000;
 }
 
+a:hover {
+    cursor: pointer;
+}
+
 p {
     cursor: default;
 }
@@ -138,6 +142,58 @@ footer {
     margin: 0;
     padding: 0;
 }
+
+.modal-three {
+    position: fixed; /* фиксированное положение */
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.5); /* цвет фона */
+    z-index: 1050;
+    opacity: 0; /* по умолчанию модальное окно прозрачно */
+    -webkit-transition: opacity 200ms ease-in; 
+    -moz-transition: opacity 200ms ease-in;
+    transition: opacity 200ms ease-in; /* анимация перехода */
+    pointer-events: none; /* элемент невидим для событий мыши */
+    margin: 0;
+    padding: 0;
+}
+
+.modal-four {
+    position: fixed; /* фиксированное положение */
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.5); /* цвет фона */
+    z-index: 1050;
+    opacity: 0; /* по умолчанию модальное окно прозрачно */
+    -webkit-transition: opacity 200ms ease-in; 
+    -moz-transition: opacity 200ms ease-in;
+    transition: opacity 200ms ease-in; /* анимация перехода */
+    pointer-events: none; /* элемент невидим для событий мыши */
+    margin: 0;
+    padding: 0;
+}
+
+.modal-five {
+    position: fixed; /* фиксированное положение */
+    top: calc(100vh - 34vh);
+    /*  */
+    right: 0;
+    bottom: 0;
+    left: -89vw;
+    background: none; /* цвет фона */
+    z-index: 1050;
+    opacity: 0; /* по умолчанию модальное окно прозрачно */
+    -webkit-transition: opacity 200ms ease-in; 
+    -moz-transition: opacity 200ms ease-in;
+    transition: opacity 200ms ease-in; /* анимация перехода */
+    pointer-events: none; /* элемент невидим для событий мыши */
+    margin: 0;
+    padding: 0;
+}
 /* при отображении модального окно */
 .modal:target {
     opacity: 1; /* делаем окно видимым */
@@ -150,17 +206,46 @@ footer {
 	pointer-events: auto; /* элемент видим для событий мыши */
     overflow-y: auto; /* добавляем прокрутку по y, когда элемент не помещается на страницу */
 }
+
+.modal-three:target {
+    opacity: 1; /* делаем окно видимым */
+	pointer-events: auto; /* элемент видим для событий мыши */
+    overflow-y: auto; /* добавляем прокрутку по y, когда элемент не помещается на страницу */
+}
+
+.modal-four:target {
+    opacity: 1; /* делаем окно видимым */
+	pointer-events: auto; /* элемент видим для событий мыши */
+    overflow-y: auto; /* добавляем прокрутку по y, когда элемент не помещается на страницу */
+}
+
+.modal-five:target {
+    opacity: 1; /* делаем окно видимым */
+	pointer-events: auto; /* элемент видим для событий мыши */
+    overflow-y: auto; /* добавляем прокрутку по y, когда элемент не помещается на страницу */
+}
 /* ширина модального окна и его отступы от экрана */
 .modal-dialog {
     position: relative;
     width: auto;
     margin: 10px;
 }
+
+.modal-dialog-five {
+    position: relative;
+    width: auto;
+    margin: 10px;
+}
 @media (min-width: 576px) {
   .modal-dialog {
-      max-width: 500px;
+      max-width: 30vw;
       margin: 30px auto; /* для отображения модального окна по центру */
   }
+
+  .modal-dialog-five {
+    max-width: 11vw;
+    margin: 30px auto; /* для отображения модального окна по центру */
+}
 }
 /* свойства для блока, содержащего контент модального окна */ 
 .modal-content {
@@ -205,6 +290,12 @@ footer {
     border-bottom: 1px solid #eceeef;
     background-color: #040081;
 }
+
+.modal-header-five {
+    background: linear-gradient(to right, #0400F8, #010002);
+    padding: 10px 15px;
+}
+
 .modal-title {
     margin-top: 0;
     margin-bottom: 0;
@@ -212,6 +303,12 @@ footer {
     font-size: calc(00.5em + 0.75vw);
     font-weight: 500;
     color: #fff;
+}
+
+.modal-title-five {
+    font-size: calc(00.5em + 0.65vw);
+    font-weight: 600;
+    line-height: 1;
 }
 /* свойства для кнопки "Закрыть" */
 .close {
@@ -241,14 +338,53 @@ footer {
     flex: 1 1 auto;
     padding: 15px;
     overflow: auto;
-    background-color: #C0C0C0;
+    background-color: #B2B2B1;
 }
 
+.modal-body-five {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+.modal-five-line {
+    display: flex;
+    align-items: center;
+    gap: 5%;
+}
+
+.modal-five-img {
+    width: 15%;
+}
+
+.modal-five-text {
+    font-size: calc(00.5em + 0.75vw);
+    font-weight: 600;
+}
+
+.marg {
+    margin-left: 20%;
+}
+
+.modal-five-but {
+    background-color: #C5C5C5;
+    font-size: calc(00.5em + 0.5vw);
+    padding: 0.5vh 1vw;
+    border-left: #fff solid 0.1vw;
+    border-top: #fff solid 0.1vw;
+    border-right: #808080 solid 0.1vw;
+    border-bottom: #808080 solid 0.1vw;
+}
+
+.modal-five-but:hover {
+    cursor: pointer;
+}
 
 .modal-true {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    margin-bottom: 1vh;
 }
 
 .modal-img {

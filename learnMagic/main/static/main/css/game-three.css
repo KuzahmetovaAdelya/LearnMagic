@@ -1,0 +1,70 @@
+.window-games {
+    background-image: url(./../img/photo/fon-two.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 50vh;
+}
+
+.window-body-first-line {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 5%;
+    margin-left: 7%;
+}
+
+.game-three-text {
+    text-align: center;
+    font-size: calc(00.5em + 1vw);
+    color: #fff;
+    background-color: #77936A;
+    border: #857150 solid 0.5vw;
+    padding: 0.5vh 0.5vw;
+}
+
+.game-but {
+    font-size: calc(00.5em + 0.5vw);
+    background-color: #C0C0C0;
+    width: 35%;
+    padding-top: 0.8vh;
+    padding-bottom: 0.8vh;
+    font-weight: 600;
+    border-top: solid #BFBFBF 3px;
+    border-left: solid #BFBFBF 3px;
+    border-bottom: solid #7B7B7B 3px;
+    border-right: solid #7B7B7B 3px;
+}
+
+.game-but:hover {
+    cursor: pointer;
+}
+
+/* Game four */
+
+.game-four {
+    background-color: #77936A;
+    border: #857150 solid 0.5vw;
+    padding: 1vh 1vw;
+}
+
+.game-four-text {
+    font-size: calc(00.5em + 0.75vw);
+    font-weight: 600;
+    text-align: center;
+    color: #fff;
+}
+
+.game-four-icon {
+    width: 5vw;
+}
+
+.four-but {
+    width: 25%;
+    font-size: calc(00.5em + 0.75vw);
+}
+
+.window-body-second-line {
+    display: flex;
+    align-items: center;
+    gap: 5vw;
+    margin-top: 2vh;
+}

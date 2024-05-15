@@ -11,4 +11,7 @@ urlpatterns = [
     path('games-pup', views.gamesPagePup, name='games-pup'),
     path('child-game-one', views.childGameOne, name='child-game-one'),
     path('child-game-two', views.childGameTwo, name='child-game-two'),
+    path('pup-game-one', views.pupGameOne, name='pup-game-one'),
+    path('pup-game-two', views.pupGameTwo, name='pup-game-two'),
+    path('exit', views.exit, name='exit'),
 ]

@@ -19,7 +19,7 @@
                     <p class="icons-name">Мой компьютер</p>
                 </a>
 
-                <a href="{% url 'desktop-pup' %}" class="icon-link">
+                <a href="{% url 'games-pup' %}" class="icon-link">
                     <img src="{% static 'main/img/icon/files.svg' %}" alt="" class="icon">
                     <p class="icons-name">Игры</p>
                 </a>
@@ -59,15 +59,43 @@
 
                 <div class="window-body">
                     <div class="window-files-line">
-                        <a href="#" class="icon-link window-body-file-link"><img src="{% static 'main/img/icon/files.svg' %}" alt="" class="window-body-file"><p class="icons-name window-file-name">Информатика</p></a>
-                        <a href="#" class="icon-link window-body-file-link"><img src="{% static 'main/img/icon/files.svg' %}" alt="" class="window-body-file"><p class="icons-name window-file-name">Как поступить?</p></a>
+                        <a href="{% url 'pup-game-two' %}" class="icon-link window-body-file-link"><img src="{% static 'main/img/icon/files.svg' %}" alt="" class="window-body-file"><p class="icons-name window-file-name">Информатика</p></a>
+                        <a href="{% url 'pup-game-one' %}" class="icon-link window-body-file-link"><img src="{% static 'main/img/icon/files.svg' %}" alt="" class="window-body-file"><p class="icons-name window-file-name">Как поступить?</p></a>
+                        <a href="{% url 'pup-game-two' %}" class="icon-link window-body-file-link"><img src="{% static 'main/img/icon/files.svg' %}" alt="" class="window-body-file"><p class="icons-name window-file-name">Русский язык</p></a>
+                        <a href="{% url 'pup-game-one' %}" class="icon-link window-body-file-link"><img src="{% static 'main/img/icon/files.svg' %}" alt="" class="window-body-file"><p class="icons-name window-file-name">Математика</p></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="openModal5" class="modal-five">
+            <div class="modal-dialog-five">
+                <div class="modal-content">
+                    <div class="modal-header modal-header-five">
+                        <h3 class="modal-title modal-title-five">LEARN MAGIC</h3>
+                        <a href="#" title="Close" class="close">×</a>
+                    </div>
+                    <div class="modal-body">    
+                        <div class="modal-body-five">
+                            <div class="modal-five-line">
+                                <img src="{% static 'main/img/icon/user.svg' %}" alt="" class="modal-five-img">
+                                <p class="modal-five-text">{{name|escapejs}}</p>
+                            </div>
+                            <div class="modal-five-line">
+                                <p class="modal-five-text marg">{{role|escapejs}}</p>
+                            </div>
+                            <form class="modal-five-line" action="{% url 'exit' %}" method="post">
+                                {% csrf_token %}
+                                <input type="submit" value="Выйти" class="modal-five-but marg">
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
         <footer>
-            <a href="#" class="foot-but">
+            <a href="#openModal5" class="foot-but">
                 <img src="{% static 'main/img/icon/logo.png' %}" alt="" class="foot-but-img">
                 <p class="foot-but-text">АККАУНТ</p>
             </a>
