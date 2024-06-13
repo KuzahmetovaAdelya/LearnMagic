@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from . models import Persons
+from . models import Persons, Answer
 import bcrypt
 from django.core.exceptions import ObjectDoesNotExist
 
@@ -109,7 +109,10 @@ def childGameOne(request):
     name = decodeCookie(request.COOKIES['user'])[0]
     if request.method == "POST":
         u_answer = request.POST.get("u_answer", "0")
-        r_answer = "3"
+        game_name = 'Icons'
+        r_answer = Answer.objects.get(gameName = game_name).answer
+        # r_answer = "3"
+        
         if u_answer == r_answer:
             server = {"server": "yes", "role": role, "name": name}
             return render(request, 'main/game-one.html', server)
@@ -129,11 +132,12 @@ def childGameTwo(request):
         u_answer_two = request.POST.get("answer-two", "0").lower()
         u_answer_three = request.POST.get("answer-three", "0").lower()
         u_answer_four = request.POST.get("answer-four", "0").lower()
-        r_answer_one = "зеленый"
-        r_answer_two = "синий"
-        r_answer_three = "желтый"
-        r_answer_four = "красный"
-        if u_answer_one == r_answer_one and u_answer_two == r_answer_two and u_answer_three == r_answer_three and u_answer_four == r_answer_four:
+        u_answer = u_answer_one + ", " + u_answer_two + ", " + u_answer_three + ", " + u_answer_four
+
+        game_name = 'Colors'
+        r_answer = Answer.objects.get(gameName = game_name).answer
+
+        if u_answer == r_answer:
             server = {"server": "yes", "role": role, "name": name}
             return render(request, 'main/game-two.html', server)
         else:
@@ -148,15 +152,15 @@ def pupGameOne(request):
     role = 'Школьник'
     name = decodeCookie(request.COOKIES['user'])[0]
     if request.method == "POST":
+        game_name = 'Situation'
+        r_answer = Answer.objects.get(gameName = game_name).answer
+
         answer = request.POST.get("n", "0")
-        if answer == "Переслать другу деньги":
-            server = {"server": "no", "role": role, "name": name}
-            return render(request, 'main/game-three.html', server)
-        elif answer == "Перезвонить другу и уточнить":
+        if answer == r_answer:
             server = {"server": "yes", "role": role, "name": name}
             return render(request, 'main/game-three.html', server)
         else:
-            server = {"role": role, "name": name}
+            server = {"server": "no", "role": role, "name": name}
             return render(request, 'main/game-three.html', server)
     else:
         server = {"role": role, "name": name}
@@ -167,15 +171,16 @@ def pupGameTwo(request):
     role = 'Школьник'
     name = decodeCookie(request.COOKIES['user'])[0]
     if request.method == "POST":
+
+        game_name = 'IT'
+        r_answer = Answer.objects.get(gameName = game_name).answer
+
         answer = request.POST.get("n", "0")
-        if answer == "Кубик" or answer == "Книга":
-            server = {"server": "no", "role": role, "name": name}
-            return render(request, 'main/game-four.html', server)
-        elif answer == "Клавиатура":
+        if answer == r_answer:
             server = {"server": "yes", "role": role, "name": name}
             return render(request, 'main/game-four.html', server)
         else:
-            server = {"role": role, "name": name}
+            server = {"server": "no", "role": role, "name": name}
             return render(request, 'main/game-four.html', server)
     else:
         server = {"role": role, "name": name}
