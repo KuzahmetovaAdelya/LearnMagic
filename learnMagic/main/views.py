@@ -111,7 +111,6 @@ def childGameOne(request):
         u_answer = request.POST.get("u_answer", "0")
         game_name = 'Icons'
         r_answer = Answer.objects.get(gameName = game_name).answer
-        # r_answer = "3"
         
         if u_answer == r_answer:
             server = {"server": "yes", "role": role, "name": name}
@@ -191,3 +190,59 @@ def exit(request):
     response = redirect("startPage")
     response.delete_cookie('user')
     return response
+
+
+def profile(request):
+	name = decodeCookie(request.COOKIES['user'])[0]
+	if decodeCookie(request.COOKIES['user'])[1] == '1':
+		role = 'Школьник'
+	else:
+		role = 'Дошкольник'
+	
+	server = {'name':name, 'role':role}
+	return render(request, 'main/profile.html', server)
+
+
+def home(request):
+	if decodeCookie(request.COOKIES['user'])[1] == '1':
+		response = redirect("desktop-pup")
+	else:
+		response = redirect("desktop-child")
+
+	return response
+
+
+def changeProfile(request):
+    if request.method == 'POST':
+        action = request.POST.get('action', 'nameChange')
+        name = decodeCookie(request.COOKIES['user'])[0]
+        user = Persons.objects.get(name = name)
+        if action == 'nameChange':
+            newName = request.POST.get('name', 'Undefined')
+            user.name = newName
+            user.save(update_fields=['name'])
+            response = redirect('profile')
+            response.set_cookie('user', encodeCookie(newName, user.role))
+        elif action == 'roleChange':
+            newRole = request.POST.get('role', '0')
+            user.role = newRole
+            user.save(update_fields=['role'])
+            response = redirect('profile')
+            response.set_cookie('user', encodeCookie(name, newRole))
+        else:
+            newPassword = request.POST.get('password', 'None')
+            newPassword = bcrypt.hashpw(newPassword.encode(), bcrypt.gensalt())
+            user.password = newPassword.decode()
+            user.save(update_fields=['password'])
+            response = redirect('profile')
+
+        return response
+    else:
+        name = decodeCookie(request.COOKIES['user'])[0]
+        if decodeCookie(request.COOKIES['user'])[1] == '1':
+            role = 'Школьник'
+        else:
+            role = 'Дошкольник'     
+        server = {'name':name, 'role':role}
+        return render(request, 'main/profile-change.html', server)
+           

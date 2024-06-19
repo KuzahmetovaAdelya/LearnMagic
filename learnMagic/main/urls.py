@@ -14,4 +14,7 @@ urlpatterns = [
     path('pup-game-one', views.pupGameOne, name='pup-game-one'),
     path('pup-game-two', views.pupGameTwo, name='pup-game-two'),
     path('exit', views.exit, name='exit'),
+    path('home', views.home, name='home'),
+    path('profile', views.profile, name='profile'),
+    path('profile-change', views.changeProfile, name='profile-change'),
 ]
